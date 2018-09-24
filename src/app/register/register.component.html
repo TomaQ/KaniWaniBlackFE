@@ -1,0 +1,31 @@
+<div class="container center">
+    <div class="row">
+      <div class="col m3"></div>
+      <div class="card col s12 m6">
+        <div class="row">
+          <form (submit)="createUser()" #loginForm="ngForm">
+            <div class="input-field col s12">
+              <input id="username" type="text" class="validate form-control" required [(ngModel)]="model.username" name="username" minlength="4" maxlength="12">
+              <small [hidden]="username.invalid && (username.dirty || username.touched)">Username must be between 4 - 12 characters.</small>
+              <label for="username">Username</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate form-control" required [(ngModel)]="model.password" name="password">
+              <label for="password">Password</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="password_confirmation" type="password" class="validate form-control" required [(ngModel)]="model.password_confirmation" name="password_confirmation">
+                <small [hidden]="password_confirmation.valid && (name.dirty || name.touched)">Passwords must match.</small>
+                <label for="password_confirmation">Confirm Password</label>
+              </div>
+            <div class="row">
+              <a (click)="createUser()" class="waves-effect waves-light btn right pad-side">Register</a>
+            </div>
+            <!--using above button for styling purposes-->
+            <button type="submit" style="display:none; visibility: hidden;">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="col m3"></div>
+    </div>
+  </div>

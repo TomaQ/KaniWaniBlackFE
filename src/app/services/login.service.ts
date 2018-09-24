@@ -12,18 +12,16 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  testLogin() {
+  loginUser(request: LoginRequest) {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    const url = 'https://wanikaniblack.azurewebsites.net/api/user/LoginUser';
+    //TODO: put url in environment vars
+    //const url = 'https://wanikaniblack.azurewebsites.net/api/user/LoginUser';
+    const url = 'http://localhost/kaniwaniblack/api/user/LoginUser';
 
-    const fakeUser: LoginRequest = {
-      Username: 'TestUser',
-      Password: 'foobar123',
-      Application: 'Web'
-    }
+    request.Application = 'Web';
 
-    return this.http.post<LoginResponse>(url, fakeUser);
+    return this.http.post<LoginResponse>(url, request);
   }
 }

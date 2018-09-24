@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import 'materialize-css';
 import { MaterializeModule } from 'angular2-materialize';
@@ -21,7 +22,8 @@ import { LoginService } from './services/login.service';
     BrowserModule,
     AppRoutingModule,
     MaterializeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]
